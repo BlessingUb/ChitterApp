@@ -3,6 +3,7 @@
   <% @tweets.reverse.each do |tweet| %>
     <li>
         <%= tweet.message %></br>
+        Tweeted on: <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
     </li>
   <% end %>
 </ul>
