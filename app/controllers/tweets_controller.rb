@@ -1,6 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_post, only: [:show]
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:index]
 
     def index
       @tweets = Tweet.all
