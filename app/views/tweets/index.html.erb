@@ -1,9 +1,13 @@
-<h1>Tweets</h1>
+
 <ul>
   <% @tweets.reverse.each do |tweet| %>
     <li>
         <%= tweet.message %></br>
+        <% if signed_in_user%>
+        <%= link_to tweet.message, tweet %>
         Tweeted on: <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
     </li>
   <% end %>
 </ul>
+
+<
