@@ -1,14 +1,2 @@
-<%= form_with model: @tweet do |form| %>
-  <div>
-    <%= form.label :message %>
-    <%= form.text_field :message %>
-    <% @tweet.errors.full_messages_for(:message).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-  <div>
-    <%= form.submit "Submit" %>
-  </div> 
-<% end %>
+<%= render "form", tweet: @tweet %>
  
