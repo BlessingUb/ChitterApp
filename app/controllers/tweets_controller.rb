@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
     def index
       @tweets = Tweet.all
     end
+
     def show 
       @tweet = Tweet.find(params[:id])
     end
@@ -14,9 +15,11 @@ class TweetsController < ApplicationController
   
     def create
       @tweet = Tweet.new(tweet_params)
-  
+      
+
       if @tweet.save
         redirect_to tweets_path
+        respond_with Tweet.create(tweet_params.merge(user_id: current_user.id))
       else
         render :new
       end

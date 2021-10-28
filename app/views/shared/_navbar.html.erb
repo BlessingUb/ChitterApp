@@ -13,10 +13,11 @@
         <li>
         <%= link_to 'New Tweet', new_tweet_path, class: 'nav-link' %>
         </li>
+        <li><span class="navbar-text"><%= current_user.username %></span></li>
+        <% else %>
         <li>
         <%= link_to 'News Feed', tweets_path, class: 'nav-link' %>
         </li>
-        <% else %>
         <li>
         <%= link_to 'Register', new_user_registration_path, class: 'nav-link' %>
         </li>
