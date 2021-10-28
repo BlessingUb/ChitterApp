@@ -2,11 +2,10 @@ class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
     def index
-      @tweets = Tweet.all
+      @tweets = Tweet.order( created_at: :desc )
     end
 
     def show 
-      @tweet = Tweet.find(params[:id])
     end
   
     def new
@@ -15,11 +14,9 @@ class TweetsController < ApplicationController
   
     def create
       @tweet = Tweet.new(tweet_params)
-      
-
+      @tweet.user = current_user
       if @tweet.save
-        redirect_to tweets_path
-        respond_with Tweet.create(tweet_params.merge(user_id: current_user.id))
+        redirect_to root_path
       else
         render :new
       end
