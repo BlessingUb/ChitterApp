@@ -4,15 +4,18 @@
 
   <% liked = Like.find_by( tweet: tweet, user: current_user ) != nil %>
   <% btn_color = liked ? "warning" : "default" %>
+  <em>
+      <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>, by
+      <%= tweet.user.handle %>
+    </em>
 
   <%= link_to "👍", tweet_likes_path( tweet ), method: :post, class: "btn btn-#{btn_color} btn-xs", disabled: !user_signed_in? %>
   <%= tweet.likes.count %>
+  <em>
   <%= button_to "Leave a Comment", new_tweet_comment_path( tweet ), class: "btn btn-primary btn-lg", disabled: !user_signed_in? %>
-
+  </em>
 
   &nbsp
-    <em>
-      <%= tweet.user.handle %>
-    </em>
+    
   </p>
 </div>
