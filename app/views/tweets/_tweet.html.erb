@@ -7,6 +7,8 @@
 
   <%= link_to "👍", tweet_likes_path( tweet ), method: :post, class: "btn btn-#{btn_color} btn-xs", disabled: !user_signed_in? %>
   <%= tweet.likes.count %>
+  <%= button_to "Leave a Comment", new_tweet_comment_path( tweet ), class: "btn btn-primary btn-lg", disabled: !user_signed_in? %>
+
 
   &nbsp
     <em>
