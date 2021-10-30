@@ -1,5 +1,8 @@
+<% if user_signed_in? %>
 <%= render "form" %>
+<%= render @tweets %>
+<% else %>
 <br>
 <%= render @tweets %>
-
+<% end %>
 

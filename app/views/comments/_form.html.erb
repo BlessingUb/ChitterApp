@@ -1,0 +1,11 @@
+<%= form_with model: [ @tweet, @tweet.comments.build ] do |form| %>
+  <div class="input-group col-xs-12">
+    <div class="col-xs-8"><%= form.text_area :message, class: "form-control" %></div>
+    <div class="col-xs-4"><%= form.submit "Comment", class: "btn btn-primary btn-lg" %></div>
+    <div class="field"><%= form.hidden_field :user_id, :value => user_session[:user_id]  %></div>
+    <div class="field"><%= form.hidden_field :post_id, :value => @tweet.id  %></div>
+  </div>
+<% end %>
+
+
+ 
