@@ -41,6 +41,12 @@ I want to sign up for Twitter
 
 ```
 As a User
+So that I show my love for a tweet
+I want to like on a tweet
+```
+
+```
+As a User
 So that I can post messages on Twitter as me
 I want to edit my tweet
 ```
@@ -50,7 +56,7 @@ As a User
 So that I can post messages on Twitter as me
 I want to delete my Tweet
 ```
-
+--------------------
 ```
 As a User
 So that I can stay constantly tapped in to the shouty box of Twitter
@@ -63,8 +69,3 @@ So that I show my love for a tweet
 I want to comment on a tweet
 ```
 
-```
-As a User
-So that I show my love for a tweet
-I want to like on a tweet
-```
