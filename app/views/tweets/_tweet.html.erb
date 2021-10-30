@@ -1,6 +1,14 @@
 <div class="col-xs-8">
 <p>
   <h4><%= tweet.message %></h4>
+
+  <% liked = Like.find_by( tweet: tweet, user: current_user ) != nil %>
+  <% btn_color = liked ? "warning" : "default" %>
+
+  <%= link_to "👍", tweet_likes_path( tweet ), method: :post, class: "btn btn-#{btn_color} btn-xs", disabled: !user_signed_in? %>
+  <%= tweet.likes.count %>
+
+  &nbsp
     <em>
       <%= tweet.user.handle %>
     </em>

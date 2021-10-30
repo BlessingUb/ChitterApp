@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root 'tweets#index'
   resources :tweets, :users do 
+    resources :likes
     resources :comments
   end
   resources :pages
