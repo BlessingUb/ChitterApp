@@ -30,7 +30,7 @@ class TweetsController < ApplicationController
       @tweet = Tweet.find(params[:id])
   
       if @tweet.update(tweet_params)
-        redirect_to @tweet
+        redirect_to root_path
       else
         render :edit
       end

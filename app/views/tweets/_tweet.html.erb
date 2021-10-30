@@ -1,6 +1,9 @@
 <div class="col-xs-8">
 <p>
   <h4><%= tweet.message %></h4>
+  <% if current_user.id == tweet.user_id %>
+  <%= link_to "Edit Tweet", edit_tweet_path( tweet ) %>
+  <% end %>
 
   <% liked = Like.find_by( tweet: tweet, user: current_user ) != nil %>
   <% btn_color = liked ? "warning" : "default" %>
