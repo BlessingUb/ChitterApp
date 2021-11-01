@@ -1,8 +1,8 @@
 class Comment < ApplicationRecord
-  belongs_to :tweet
-  belongs_to :user
+  belongs_to :tweet, optional: true
+  belongs_to :user, optional: true
 
-  validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 10 }
+  
+  validates :message, presence: true, length: { minimum: 10 }
   
 end

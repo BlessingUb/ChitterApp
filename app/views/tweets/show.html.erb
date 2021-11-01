@@ -1,9 +1,11 @@
-<p><%= @tweet.message %></p>
-<%= button_to "Edit Tweet", edit_tweet_path(@tweet) %>
-<%= button_to "Delete Tweet", tweet_path(@tweet),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-<%= render @tweet.comments %>
-
-<h3> Drop your thoughts</h3>
+<h4><%= @tweet.message %></h4>
+<h5> Comments </h5>
+<p>
+  <em>
+  <%= render @tweet.comments %>
+  <%= current_user.username %> 
+  </em>
 <%= render 'comments/form' %>
+
+
+    
