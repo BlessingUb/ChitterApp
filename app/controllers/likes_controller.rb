@@ -9,7 +9,7 @@ class LikesController < ApplicationController
 
       like.save
     end
-    redirect_to root_path
+    redirect_to tweets_path
   
  end
 
