@@ -17,7 +17,7 @@
           <% else %>
               <span class="navbar-text">Signed in as: <%= current_user.username %></span>
               <div  class="navbar-nav ms-auto" >
-                <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: 'nav-item nav-link' %>
+                <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: 'nav-item nav-link btn btn-danger mt-2' %>
               </div>
               </div>
           <% end %>

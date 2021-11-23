@@ -1,4 +1,8 @@
-<p> 
-  <%= comment.message %> - sent by
-  <%= User.find(comment.user_id).username %>
-</p>
+<% unless !comment.persisted? %>
+<div class='card' >
+  <div class='card-body'>
+    <%= comment.message %>
+    </div>
+  
+</div>
+<% end %>
