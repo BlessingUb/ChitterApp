@@ -6,7 +6,7 @@
       <%= tweet.user.handle %>, on 
       <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
     </div>
-    <div class="card-text text-start"><%= tweet.message %></div>
+    <div class="card-text text-start "><%= tweet.message %></div>
       <div class="card-footer text-end bg-white border-0">
         <% liked = Like.find_by( tweet: tweet, user: current_user ) != nil %>
         <% btn_color = liked ? "warning" : "default" %>
