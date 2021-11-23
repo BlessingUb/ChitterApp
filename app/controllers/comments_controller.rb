@@ -2,9 +2,12 @@ class CommentsController < ApplicationController
 
   def create
     @tweet = Tweet.find( params[:tweet_id] )
-     @comment = @tweet.comments.create(comment_params)
- 
-    redirect_to tweet_path( @tweet )
+    @comment = @tweet.comments.create(comment_params)
+    respond_to do |format|
+      format.html {redirect_to @tweet }
+      format.js 
+    end
+    
  end
  private
     def comment_params
