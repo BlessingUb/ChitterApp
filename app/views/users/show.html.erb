@@ -1,6 +1,14 @@
 
 <h1><%= nick_name%></h1>
-
+<section id="all-links">
+    <% if current_user.followees.include?(@user)  %>
+        <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+    <% else %>
+        <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
+    <% end%>
+    
+    <br>
+</section>
 
 <% if @user.tweets.any? %>
 <% @user.tweets.each do |tweet| %>
