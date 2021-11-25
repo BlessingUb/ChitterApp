@@ -3,6 +3,8 @@
   <div class='card-body'>
     <%= comment.message %>
     </div>
-  
+    <div class="card-footer text-end">
+    <small class="text-muted"><%= User.find(comment.user_id).username %></small>
+</div>
 </div>
 <% end %>

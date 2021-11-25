@@ -56,6 +56,17 @@ As a User
 So that I can post messages on Twitter as me
 I want to delete my Tweet
 ```
+
+```
+As a User
+So that I show my love for a tweet
+I want to comment on a tweet
+```
+```
+As a User
+So that I show see all my tweets in my own page
+I want to have a profile page
+```
 --------------------
 ```
 As a User
@@ -63,9 +74,5 @@ So that I can stay constantly tapped in to the shouty box of Twitter
 I want to receive an email if I am tagged in a Tweet
 ```
 
-```
-As a User
-So that I show my love for a tweet
-I want to comment on a tweet
-```
+
 
