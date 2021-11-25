@@ -4,7 +4,7 @@
     <%= comment.message %>
     </div>
     <div class="card-footer text-end">
-    <small class="text-muted"><%= User.find(comment.user_id).username %></small>
+    <small class="text-muted"><%= link_to User.find(comment.user_id).username, user_path(comment.user)%></small>
 </div>
 </div>
 <% end %>
