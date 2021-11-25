@@ -3,7 +3,7 @@
 <div class="card">
   <div class="card-body">
     <div class="card-header text-right"> 
-      <%= tweet.user.handle %>, on 
+      <%= link_to tweet.user.handle, user_path(tweet.user) %>, on 
       <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
     </div>
     <div class="card-text text-start "><%= tweet.message %></div>
@@ -39,7 +39,7 @@
  
   <% else %>
   <div class="card-header text-right"> 
-    <%= tweet.user.handle %>, on 
+  <%= link_to tweet.user.handle, user_path(tweet.user) %>, on 
     <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
   </div>
   <div class="card-text text-start"><%= tweet.message %></div>
