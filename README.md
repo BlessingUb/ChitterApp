@@ -67,6 +67,16 @@ As a User
 So that I show see all my tweets in my own page
 I want to have a profile page
 ```
+```
+As a User
+So that I show see what others are upto 
+I want to be able to follow another user
+```
+```
+As a User
+So that I show stop seeing what others are upto
+I want to be able to unfollow another user
+```
 --------------------
 ```
 As a User
