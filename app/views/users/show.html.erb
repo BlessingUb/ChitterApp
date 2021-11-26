@@ -10,15 +10,23 @@
    <h5><%= button_to "Follow ", follow_user_path, 
        method: "POST"  %></h5>
 <% end %>
-
-    
     <br>
 </section>
-
-<% if @user.tweets.any? %>
-<% @user.tweets.each do |tweet| %>
+<div>
+    <div><%= @user.bio %>
+    </br>
+    <%= @user.location %>
+    </div>
+</div>
+<% if current_user.id == @user.id %>
+<%= link_to " Edit Profile ", edit_user_registration_path(current_user)%>
+<% end %>
+<div>
+    <% if @user.tweets.any? %>
+    <% @user.tweets.each do |tweet| %>
     <%= tweet.message  %>
     <br>
     <%= tweet.created_at.strftime("%B %d %Y, %l:%M%P") %>
     <% end %>
+    </div>
     <% end %>

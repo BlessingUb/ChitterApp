@@ -1,5 +1,5 @@
 module UsersHelper
     def nick_name
-       @user.username
+        @user.firstname + " " + @user.lastname
     end 
 end
