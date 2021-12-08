@@ -1,0 +1,21 @@
+require 'rails_helper'
+require 'spec_helper'
+
+RSpec.describe 'tweets/edit', type: :view do
+  current_user = User.first_or_create!(firstname: 'bee', lastname: 'dee', username: 'beedee', bio: 'i am a girl', location: 'dundee', email: 'bee@example.com', password: 'beedee2', password_confirmation: 'beedee2')
+  
+  before(:each) do 
+    @tweet = assign(:tweet, Tweet.create!(
+      message: 'hey girl',
+      user: current_user
+    )
+  end
+
+  it 'renders the edit post form' do 
+     render 
+     assert_select "form[action=?][method=?], tweet_path(@tweet), "tweet" do
+        assert_select "input[name=?]", "tweet[message]
+     end
+  end
+
+end
